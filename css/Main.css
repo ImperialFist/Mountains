@@ -63,28 +63,159 @@ ul li {
   list-style: none;
 }
 
+ol, ul {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
 img {
-  vertical-align: top;
+  vertical-align: middle;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
   font-weight: inherit;
+  padding: 0;
+  margin: 0;
 }
 
 /*--------------------*/
 @font-face {
   font-family: "AvenirLTStd";
-  src: url(../fonts/AvenirLTStd.eot), url(../fonts/AvenirLTStd.woff) format("woff"), url(../fonts/AvenirLTStd.woff2) format("woff2"), url(../fonts/AvenirLTStd.ttf) format("truetype");
+  src: url(../fonts/AvenirLTStd.eot);
+  src: url("../fonts/AvenirLTStd.eot?#iefix") format("embedded-opentype"), url(../fonts/AvenirLTStd.woff2) format("woff2"), url(../fonts/AvenirLTStd.woff) format("woff"), url(../fonts/AvenirLTStd.ttf) format("truetype");
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
 }
 
 body {
   font-family: "AvenirLTStd", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: #010101;
+  color: #EDEDF5;
+}
+
+a {
+  color: #EDEDF5;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Bebas Neue", cursive;
+  font-size: 65px;
+  line-height: 78px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 100px;
+  line-height: 120px;
+}
+
+.header {
+  min-height: 100vh;
+}
+
+.header__navigation {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.header__wrapper {
+  position: relative;
+  z-index: 2;
+  padding-top: 45px;
+}
+
+.parallax {
+  min-height: 100vh;
+}
+
+.parallax__body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.parallax__container {
+  position: relative;
+  z-index: 2;
+  padding-top: 280px;
+}
+
+.parallax__images-parallax {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  z-index: 1;
+}
+
+.images-parallax__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.images-parallax__clouds {
+  background: url(../img/parallaxImg/cloud.png) no-repeat top/cover;
+  top: 0%;
+}
+
+.images-parallax__mountains {
+  background: url(../img/parallaxImg/MountainCut.png) no-repeat top/cover;
+  top: 45%;
+}
+
+.images-parallax__clouds, .images-parallax__mountains {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0%;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  background-color: #010101;
+}
+
+.content_text {
+  font-size: 30px;
+  line-height: 30px;
+  padding-bottom: 30px;
+}
+
+.content__header {
+  text-align: center;
+}
+
+.content::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  -webkit-transform: translate(0px, -100%);
+          transform: translate(0px, -100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(1, 1, 1, 0)), color-stop(11%, rgba(1, 1, 1, 0)), to(black));
+  background: linear-gradient(top, rgba(1, 1, 1, 0) 0%, rgba(1, 1, 1, 0) 11%, black 100%);
 }
 /*# sourceMappingURL=Main.css.map */

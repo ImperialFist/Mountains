@@ -1,22 +1,269 @@
 @import "nullstyle.scss";
 @font-face {
     font-family: "AvenirLTStd";
-    src: url(../fonts/AvenirLTStd.eot),
-    url(../fonts/AvenirLTStd.woff) format("woff"),
+    src: url(../fonts/AvenirLTStd.eot);
+    src: url("../fonts/AvenirLTStd.eot?#iefix") format("embedded-opentype"), 
     url(../fonts/AvenirLTStd.woff2) format("woff2"),
+    url(../fonts/AvenirLTStd.woff) format("woff"),
     url(../fonts/AvenirLTStd.ttf) format("truetype");
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 $contentFont:'AvenirLTStd', sans-serif;
-$titleFont:'Bebas Neue', cursive;
+$titleFont:'Bebas Neue', cursive; 
 
 
 body{
   font-family: $contentFont;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: #010101;
+  color: #EDEDF5;
+}
+a{
+  color: #EDEDF5;
 }
 
 h1, h2, h3, h4, h5, h6{
     font-family: $titleFont;
+    font-size: 65px;
+    line-height: 78px;
 }
+
+h1{
+  text-transform: uppercase;
+  font-size: 100px;
+  line-height: 120px; 
+}
+
+.header {
+  min-height: 100vh;
+
+  // .header__navigation
+  &__navigation{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+  }
+  //.header__wrapper
+  &__wrapper{
+    position: relative;
+    z-index: 2;
+    padding-top: 45px;
+  }
+
+}
+.container-fluid {
+}
+.container {
+}
+.navigation {
+		// .navigation__leftgroup
+
+		&__leftgroup {
+		}
+
+		// .navigation__rightgroup
+
+		&__rightgroup {
+		}
+}
+.d-flex {
+}
+.justify-content-between {
+}
+.align-items-center {
+}
+.leftgroup {
+
+		// .leftgroup__item
+
+		&__item {
+		}
+
+		// .leftgroup__link
+
+		&__link {
+		}
+
+		// .leftgroup__img
+
+		&__img {
+		}
+}
+.logo {
+
+		// .logo__link
+
+		&__link {
+		}
+
+		// .logo__img
+
+		&__img {
+		}
+}
+.rightgroup {
+
+		// .rightgroup__item
+
+		&__item {
+		}
+
+		// .rightgroup__link
+
+		&__link {
+		}
+
+		// .rightgroup__img
+
+		&__img {
+		}
+}
+.parallax {
+  min-height: 100vh;
+		// .parallax__body
+
+		&__body {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+		}
+
+		// .parallax__container
+
+		&__container {
+      position: relative;
+      z-index: 2;
+      padding-top: 280px;
+		}
+
+		// .parallax__title
+
+		&__title {
+		}
+
+		// .parallax__lable
+
+		&__lable {
+		}
+
+		// .parallax__images-parallax
+
+		&__images-parallax {
+      position: absolute;
+      //Больше 100 чтобы скрыть края
+      width: 120%;
+      height: 120%;
+      top: -10%; 
+      left: -10%;
+      z-index: 1;
+		}
+}
+.images-parallax {
+
+		// .images-parallax__item
+
+		&__item {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+
+		}
+
+		// .images-parallax__clouds
+
+		&__clouds {
+      background: url(../img/parallaxImg/cloud.png) no-repeat top /cover;
+      top: 0%;
+		}
+
+		// .images-parallax__mountains
+
+		&__mountains {
+      background: url(../img/parallaxImg/MountainCut.png) no-repeat top /cover;
+      top:45%;
+
+		}
+
+    &__clouds, &__mountains {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0%;
+		}
+
+}
+.content {
+  position: relative;
+  z-index: 2;
+  background-color: #010101;
+
+		// .content_text
+
+		&_text {
+      font-size: 30px;
+      line-height: 30px;
+      padding-bottom: 30px;
+		}
+
+		// .content__container
+
+		&__container {
+
+		}
+
+    // .content__header
+    &__header{
+      text-align: center;
+    }
+
+		// .content__title
+
+		&__title {
+		}
+}
+
+.content::before{
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  transform: translate(0px, -100%);
+  background: linear-gradient(top, rgba(1,1,1,0) 0%, rgba(1,1,1,0) 11%, rgba(0,0,0,1) 100%);
+}
+.footer {
+}
+
+
+// @media (max-width:767px){
+//   .parallax__title{
+//     font-size: 50px;
+//   }
+//   .parallax__lable{
+//     font-size: 12px;
+//   }
+  
+// }
+
+
+
+//Если какое-то изображение пропадает при адаптации
+// @media (max-aspect-ratio: 3/2){
+//     .images-parallax__human{
+//       background-position: 20% top;
+//     }
+// }
