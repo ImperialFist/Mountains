@@ -1,0 +1,22 @@
+@import "nullstyle.scss";
+@font-face {
+    font-family: "AvenirLTStd";
+    src: url(../fonts/AvenirLTStd.eot),
+    url(../fonts/AvenirLTStd.woff) format("woff"),
+    url(../fonts/AvenirLTStd.woff2) format("woff2"),
+    url(../fonts/AvenirLTStd.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+$contentFont:'AvenirLTStd', sans-serif;
+$titleFont:'Bebas Neue', cursive;
+
+
+body{
+  font-family: $contentFont;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: $titleFont;
+}
