@@ -3,8 +3,7 @@
 
 window.onload = function () {
 
-    console.log("Я ЖИВОЙ!");
-    const parallax = document.querySelector('.header');
+    const parallax = document.querySelector('.parallax');
     console.log(parallax);
     if (parallax) {
         parallax.addEventListener("mousemove", e=>{console.log(e);});
@@ -16,7 +15,7 @@ window.onload = function () {
 
 
         //коэффициенты - чем меньше, тем сильнее движение
-        const forClouds = 40;
+        const forClouds = 30;
         const forMountains = 10;
 
         //скорость анимации
@@ -42,25 +41,44 @@ window.onload = function () {
         setMouseParallaxStyle();
 
             parallax.addEventListener('mousemove', e =>{
-                console.log("СЛУШАЮ");
+
                 //получаем ширину и высоту блока с параллаксом
                 const parallaxWidth = parallax.offsetWidth;
                 const parallaxHeight = parallax.offsetHeight;
-                console.log(parallaxWidth);
-                console.log(parallaxHeight);
+
 
                 //определчяем центр координат - картинки
                 const coordX = e.pageX - parallaxWidth/2;
                 const coordY = e.pageY - parallaxHeight/2;
-                console.log(coordX);
-                console.log(coordY);
+
                 //Проценты от координат X и Y
                 coordXpercent = coordX/parallaxWidth*100;
                 coordYpercent = coordY/parallaxHeight*100;
-                console.log(coordXpercent);
-                console.log(coordYpercent);
+
             });
 
+            //parallax при скроле
+            let tresholdSets = [];
+            //treshold - порог при достижении каждого значения отрабатывает callback
+            for (let i = 0; i <= 1.0; i+=0.005) {
+                tresholdSets.push(i);
+                
+            }
+            const callback = function (entries, observer) {
+                const scrollTopPercent = window.pageYOffset/ parallax.offsetHeight * 100;
+                setParallaxItemsStyle(scrollTopPercent);
+            };
+
+            const observer = new IntersectionObserver(callback, {threshold:tresholdSets});
+
+            observer.observe(document.querySelector('.content'));
+
+            function setParallaxItemsStyle(scrollTopPercent) {
+                //значения отвечают за скорость скролла
+                content.style.cssText = `transform: translate(0%,-${scrollTopPercent/5}%);`
+                mountains.parentElement.style.cssText = `transform: translate(0%,-${scrollTopPercent/4}%);`
+                
+            }
 
     }
 
