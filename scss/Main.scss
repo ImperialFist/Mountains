@@ -38,6 +38,10 @@ h1{
   line-height: 120px; 
 }
 
+.comment{
+  text-align: center;
+}
+
 .header {
   min-height: 100vh;
 
@@ -195,6 +199,23 @@ h1{
       z-index: 1;
 		}
 }
+
+.video{
+
+  //.video__item
+
+  &__item{
+    width: 700px;
+  }
+
+  &__wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
 .images-parallax {
 
 		// .images-parallax__item
@@ -236,30 +257,58 @@ h1{
   z-index: 2;
   background-color: #010101;
 
-		// .content_text
-
-		&_text {
-      font-size: 30px;
-      line-height: 30px;
-      padding-bottom: 30px;
-		}
-
 		// .content__container
 
 		&__container {
 
 		}
-
-    // .content__header
-    &__header{
-      text-align: center;
-    }
-
-		// .content__title
-
-		&__title {
+    // .content__body 
+    &__body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,700px));
+      justify-content: center;
+      padding-bottom: 100px;
 		}
+
 }
+
+.item {
+
+  // .item__header
+
+  &__header {
+    text-align: center;
+    margin: 2% 0;
+  }
+
+  // .item__video
+
+  &__video {
+    text-align: center;
+    position: relative;
+    margin-bottom: 15px;
+    padding-bottom: 50%;
+
+  }
+
+  &__video-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    //чтобы вписывать любое соотношение сторон
+    object-fit: cover;
+  }
+
+  // .item__text
+
+  &__text {
+    font-size: 15px;
+    line-height: 17px;
+  }
+}
+
 
 .content::before{
   pointer-events: none;

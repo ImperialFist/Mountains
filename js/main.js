@@ -4,9 +4,8 @@
 window.onload = function () {
 
     const parallax = document.querySelector('.parallax');
-    console.log(parallax);
+
     if (parallax) {
-        parallax.addEventListener("mousemove", e=>{console.log(e);});
         
         // текст в параллаксе
         const content = document.querySelector('.parallax__container');
