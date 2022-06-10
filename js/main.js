@@ -80,13 +80,16 @@ window.onload = function () {
             }
 
     }
-    //Play btn
+    //controls
+    const video = document.querySelector("#everest-video");
 
     const playBtn = document.querySelector('#play-everest');
     const volume = document.querySelector('#volume-everest');
+    const mute = document.querySelector('#mute-everest');
     const progress = document.querySelector('#progress-everest');
     const progressBg = document.querySelector('#progress-bg-everest');
-    const video = document.querySelector("#everest-video");
+    const fullscreen = document.querySelector('#fullscreen-everest');
+   
 
   
     //play-pause
@@ -105,6 +108,16 @@ window.onload = function () {
     volume.addEventListener("input", (e)=>{
         let v = e.target.value;
         video.volume = v/100;
+    });
+    //mute
+    mute.addEventListener('click', ()=>{
+        video.muted = !video.muted;
+        mute.classList.toggle('--muted');
+    });
+
+    //fullscreen
+    fullscreen.addEventListener('click', ()=>{
+        video.requestFullscreen();
     });
 
     //Progress bar

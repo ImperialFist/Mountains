@@ -93,6 +93,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+.controls__play-btn, .controls__volume-range, .controls__progress, .controls__progress-bg, .controls__mute-btn, .controls__fullscreen, .cross {
+  position: absolute;
+  z-index: 2;
+}
+
 body {
   font-family: "AvenirLTStd", sans-serif;
   font-weight: 400;
@@ -308,13 +313,11 @@ h1 {
 }
 
 .controls__play-btn {
-  background: url(../img/icons/iconPlay.svg) no-repeat center/cover;
-  height: 65px;
-  width: 65px;
-  position: absolute;
+  background: url(../img/icons/iconPlay.svg) no-repeat center/contain;
+  height: 19.5%;
+  width: 10%;
   top: 38%;
   left: 45.5%;
-  z-index: 2;
   opacity: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -322,17 +325,14 @@ h1 {
 
 .controls__volume-range {
   width: 0px;
-  position: absolute;
   bottom: 30px;
-  left: 1%;
-  z-index: 2;
+  left: 4.5%;
   opacity: 0.2;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .controls__progress {
-  position: absolute;
   background-color: aqua;
   height: 100%;
   width: 100%;
@@ -343,20 +343,51 @@ h1 {
 }
 
 .controls__progress-bg {
-  position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
-  height: 3px;
+  height: 0.5%;
   width: 100%;
   bottom: 0;
   left: 0;
-  z-index: 2;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   cursor: pointer;
 }
 
+.controls__mute-btn {
+  background: url(../img/icons/iconVolume.png) no-repeat center/contain;
+  height: 5.9%;
+  width: 3%;
+  bottom: 28px;
+  left: 1%;
+}
+
+.controls__fullscreen {
+  background: url(../img/icons/iconFullscreen.png) no-repeat center/contain;
+  height: 5.9%;
+  width: 3%;
+  bottom: 28px;
+  right: 1%;
+}
+
 .--paused {
-  background: url(../img/icons/iconPause.png) no-repeat center/cover;
+  background: url(../img/icons/iconPause.png) no-repeat center/contain;
+}
+
+.cross {
+  left: -9%;
+  top: 43%;
+  width: 100%;
+  height: 20%;
+  padding: 0 65%;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  background-color: #032b35;
+  border-radius: 50px;
+  display: none;
+}
+
+.controls__mute-btn.--muted .cross {
+  display: block;
 }
 
 .item__video:hover .controls__play-btn {
@@ -371,7 +402,7 @@ h1 {
 }
 
 .item__video:hover .controls__progress-bg {
-  height: 20px;
+  height: 6%;
 }
 
 .content::before {
