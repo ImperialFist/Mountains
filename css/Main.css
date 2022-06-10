@@ -307,6 +307,73 @@ h1 {
   line-height: 17px;
 }
 
+.controls__play-btn {
+  background: url(../img/icons/iconPlay.svg) no-repeat center/cover;
+  height: 65px;
+  width: 65px;
+  position: absolute;
+  top: 38%;
+  left: 45.5%;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.controls__volume-range {
+  width: 0px;
+  position: absolute;
+  bottom: 30px;
+  left: 1%;
+  z-index: 2;
+  opacity: 0.2;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.controls__progress {
+  position: absolute;
+  background-color: aqua;
+  height: 100%;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 3%;
+}
+
+.controls__progress-bg {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.--paused {
+  background: url(../img/icons/iconPause.png) no-repeat center/cover;
+}
+
+.item__video:hover .controls__play-btn {
+  opacity: 1;
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.item__video:hover .controls__volume-range {
+  opacity: 1;
+  width: 80px;
+}
+
+.item__video:hover .controls__progress-bg {
+  height: 20px;
+}
+
 .content::before {
   pointer-events: none;
   content: "";

@@ -95,7 +95,14 @@
                         <p class="content__lable">The highest mountain in the world</p>
                     </div>
                     <div class="item__video">
-                        <video class="item__video-content" preload="metadata" poster="img/videoImg/everestPoster.png" controls >
+                        <div class="controls">
+                            <button class="controls__play-btn" id="play-everest" ></button>
+                            <input class="controls__volume-range " id="volume-everest" min="0" max="100" type="range" >
+                            <div class="controls__progress-bg" id="progress-bg-everest">
+                                <div class="controls__progress" id="progress-everest"></div>
+                            </div>
+                        </div>
+                        <video class="item__video-content" id="everest-video" preload="metadata" poster="img/videoImg/everestPoster.png" >
                             <source src="vid/Everest - On the Top.webm" type="video/webm">
                             <source src="vid/Everest - On the Top.mp4" type="video/mp4">
                         </video>

@@ -80,5 +80,51 @@ window.onload = function () {
             }
 
     }
+    //Play btn
+
+    const playBtn = document.querySelector('#play-everest');
+    const volume = document.querySelector('#volume-everest');
+    const progress = document.querySelector('#progress-everest');
+    const progressBg = document.querySelector('#progress-bg-everest');
+    const video = document.querySelector("#everest-video");
+
+  
+    //play-pause
+    playBtn.addEventListener("click", ()=>{
+        console.log("НАЖАЛ");
+    if (video.paused == true) {
+        video.play();
+        playBtn.classList.toggle('--paused');
+    } else {
+        video.pause();
+        playBtn.classList.toggle('--paused');
+    }        
+    });
+
+    //value range
+    volume.addEventListener("input", (e)=>{
+        let v = e.target.value;
+        video.volume = v/100;
+    });
+
+    //Progress bar
+    video.addEventListener("timeupdate", ()=>{
+        const percentage = (video.currentTime/ video.duration)*100;
+        progress.style.cssText = `width: ${percentage}%`;
+    });
+
+    //Change progress bar on click
+    progressBg.addEventListener("click", (e)=>{
+        const progressTime = (e.offsetX/progressBg.offsetWidth)* video.duration;
+        video.currentTime = progressTime;
+    });
+
+    // progress.addEventListener("input", (e)=>{
+    //     console.log(e);
+    // });
+
+
+
+
 
 }
