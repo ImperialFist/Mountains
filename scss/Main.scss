@@ -375,8 +375,8 @@ h1{
     width: 3%;
     bottom: 28px;
     left: 1%;
-
-
+    opacity: 0.2;
+    transition: all 0.3s ease;
   }
 
   &__fullscreen{
@@ -386,6 +386,8 @@ h1{
     width: 3%;
     bottom: 28px;
     right: 1%;
+    opacity: 0.2;
+    transition: all 0.3s ease;
   }
 
 }
@@ -419,6 +421,14 @@ h1{
 .item__video:hover .controls__volume-range{
   opacity: 1;
   width: 80px;
+}
+
+.item__video:hover .controls__mute-btn{
+  opacity: 1;
+}
+
+.item__video:hover .controls__fullscreen{
+  opacity: 1;
 }
 
 .item__video:hover .controls__progress-bg{
