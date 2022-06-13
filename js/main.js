@@ -78,7 +78,7 @@ window.onload = function () {
                 coordXpercent = coordX/parallaxWidth*100;
                 coordYpercent = coordY/parallaxHeight*100;
                 forClouds = 10;
-                forMountains = 3;
+                forMountains = 6;
 
             })
 
