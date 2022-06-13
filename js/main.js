@@ -56,7 +56,28 @@ window.onload = function () {
 
             });
 
-            //parallax при скроле
+                //for sensors
+            parallax.addEventListener('touchmove', (e)=>{
+                
+                //координаты сенсора
+                const touches = e.changedTouches;
+
+                //получаем ширину и высоту блока с параллаксом
+                const parallaxWidth = parallax.offsetWidth;
+                const parallaxHeight = parallax.offsetHeight;
+
+
+                //определчяем центр координат - картинки
+                const coordX = touches[0].pageX - parallaxWidth/2;
+                const coordY = touches[0].pageY - parallaxHeight/2;
+
+                //Проценты от координат X и Y
+                coordXpercent = coordX/parallaxWidth*100;
+                coordYpercent = coordY/parallaxHeight*100;
+
+            })
+
+            //-----parallax при скроле
             let tresholdSets = [];
             //treshold - порог при достижении каждого значения отрабатывает callback
             for (let i = 0; i <= 1.0; i+=0.005) {
@@ -79,7 +100,17 @@ window.onload = function () {
                 
             }
 
+
+
+
     }
+
+
+
+
+
+
+
     //controls
     const video = document.querySelector("#everest-video");
 

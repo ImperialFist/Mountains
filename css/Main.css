@@ -210,7 +210,7 @@ h1 {
           writing-mode: vertical-rl;
   text-transform: uppercase;
   background: url(../img/icons/scroll.svg) no-repeat center/30px 30px;
-  padding: 0 2% 9% 2%;
+  padding: 0 2% 10rem 2%;
   position: absolute;
   bottom: -110%;
   left: 50%;
