@@ -13,12 +13,12 @@ window.onload = function () {
         const mountains = document.querySelector('.images-parallax__mountains');
 
 
-        //коэффициенты - чем меньше, тем сильнее движение
-        const forClouds = 30;
-        const forMountains = 10;
-
         //скорость анимации
         const speed = 0.05;
+
+         //коэффициенты - чем меньше, тем сильнее движение
+         let forClouds = 0;
+         let forMountains = 0;
         
         //переменные позиций
         let positionX = 0, positionY = 0;
@@ -34,7 +34,9 @@ window.onload = function () {
             //передаём ситли
             clouds.style.cssText = `transform: translate(${positionX/forClouds}%,${positionY/forClouds}%);`;
             mountains.style.cssText = `transform: translate(${positionX/forMountains}%,${positionY/forMountains}%);`;
-        
+
+
+
             requestAnimationFrame(setMouseParallaxStyle);
         }
         setMouseParallaxStyle();
@@ -53,7 +55,8 @@ window.onload = function () {
                 //Проценты от координат X и Y
                 coordXpercent = coordX/parallaxWidth*100;
                 coordYpercent = coordY/parallaxHeight*100;
-
+                forClouds = 30;
+                forMountains = 10;
             });
 
                 //for sensors
@@ -74,6 +77,8 @@ window.onload = function () {
                 //Проценты от координат X и Y
                 coordXpercent = coordX/parallaxWidth*100;
                 coordYpercent = coordY/parallaxHeight*100;
+                forClouds = 10;
+                forMountains = 3;
 
             })
 
